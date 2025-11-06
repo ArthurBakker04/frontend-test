@@ -11,4 +11,4 @@ RUN npm i -g serve
 COPY --from=build /app/dist ./dist
 ENV PORT=3000
 EXPOSE 3000
-CMD ["sh", "-lc", "serve -s dist -l 0.0.0.0:${PORT:-3000}"]
+CMD ["sh", "-lc", "serve -s dist -l ${PORT:-3000}"]
